@@ -4,19 +4,19 @@
 
 === "python"
 
-```python
-# Hello world example (Python)
-print("Hello World!")
-zero_to_ten_double = [2*x for x in range(10)]
-```
+	```python
+	# Hello world example (Python)
+	print("Hello World!")
+	zero_to_ten_double = [2*x for x in range(10)]
+	```
 
-=== "markdown text"
+=== "shell"
 
-```python
-# Hello world example (Python)
-print("Hello World!")
-zero_to_ten_double = [2*x for x in range(10)]
-```
+	```shell
+	# Hello world example (Python)
+	print("Hello World!")
+	zero_to_ten_double = [2*x for x in range(10)]
+	```
 
 ## code blocks with title 
 
@@ -38,3 +38,17 @@ zero_to_ten_double = [2*x for x in range(10)]
 :flag_be: :heart: :beer:
 
 :beer: :beers: :beer: :arrow_right: :nauseated_face:
+
+## add Notes
+
+!!! Note
+	This is a note
+
+!!! Danger
+	This is a Danger
+
+!!! Warning
+	This is a warning
+
+!!! Example
+	This is an Example
