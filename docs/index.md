@@ -48,6 +48,7 @@ jobs:
 ```
 ### Add to GitHub pages
 Go to your resository on github
+
 * Go to Settings > Pages > Build and deploymet > `Deploy from a branch`
 * Goto Settings > Pages > Branch  and  select `gh-pages`
 
