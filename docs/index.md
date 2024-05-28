@@ -47,11 +47,13 @@ jobs:
       - run: mkdocs gh-deploy --force
 ```
 ### Add to GitHub pages
-* Go to settings
-* Adjust accordingly
-![Alt Text](../images/github-pages.png)
+Go to your resository on github
+* Go to Settings > Pages > Build and deploymet > `Deploy from a branch`
+* Goto Settings > Pages > Branch  and  select `gh-pages`
 
-Now your ci.yml file should be deploid
+
+
+Now your ci.yml file should be deploid automatically.
 
 ## Publish/deploy without Actions
 In Github enterprize **Actions** is not allowed (at least @UGent). You need to deploy manually.
