@@ -16,10 +16,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-## Publish
+## Publish with Actions
 
 		.github/workflows	# Create folders
-				ci.yml		" Create file for automated actions in Github
+		ci.yml						# Create file for automated actions in Github
 
 ```yml title="ci.yml"
 name: ci
@@ -46,3 +46,32 @@ jobs:
       - run: pip install pillow cairosvg
       - run: mkdocs gh-deploy --force
 ```
+### Add to GitHub pages
+* Go to settings
+* Adjust accordingly
+![Alt Text](../images/github-pages.png)
+
+Now your ci.yml file should be deploid
+
+## Publish/deploy without Actions
+In Github enterprize **Actions** is not allowed (at least @UGent). You need to deploy manually.
+Full documentation is found [here](https://www.mkdocs.org/user-guide/deploying-your-docs/).
+
+### The short of it
+Consider this project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+
+Issue following command in the project directory
+```shell
+mkdocs gh-deploy --remote-branch main
+```
+
+!!! Danger
+		This will create and push the /sites directory to your main branch.
+		If you are also working with Github desktop, don't commit and push otherwise you overwrite
+		the gh-deploy command. When making changes to your local repository you need to reissue the deploy command.
+		

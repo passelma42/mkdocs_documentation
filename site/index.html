@@ -338,11 +338,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
+  <a href="#publish-with-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      Publish
+      Publish with Actions
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Publish with Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-to-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add to GitHub pages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishdeploy-without-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish/deploy without Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publish/deploy without Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-short-of-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      The short of it
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -404,9 +443,9 @@ docs/
     index.md  # The documentation homepage.
     ...       # Other markdown pages, images and other files.
 </code></pre></div>
-<h2 id="publish">Publish</h2>
+<h2 id="publish-with-actions">Publish with Actions</h2>
 <div class="highlight"><pre><span></span><code>    .github/workflows   # Create folders
-            ci.yml      &quot; Create file for automated actions in Github
+    ci.yml                      # Create file for automated actions in Github
 </code></pre></div>
 <div class="highlight"><span class="filename">ci.yml</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>name: ci
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>on:
@@ -432,6 +471,33 @@ docs/
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>      - run: pip install pillow cairosvg
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      - run: mkdocs gh-deploy --force
 </code></pre></div>
+<h3 id="add-to-github-pages">Add to GitHub pages</h3>
+<ul>
+<li>Go to settings</li>
+<li>Adjust accordingly
+<img alt="Alt Text" src="../images/github-pages.png" /></li>
+</ul>
+<p>Now your ci.yml file should be deploid</p>
+<h2 id="publishdeploy-without-actions">Publish/deploy without Actions</h2>
+<p>In Github enterprize <strong>Actions</strong> is not allowed (at least @UGent). You need to deploy manually.
+Full documentation is found <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">here</a>.</p>
+<h3 id="the-short-of-it">The short of it</h3>
+<p>Consider this project layout</p>
+<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre></div>
+<p>Issue following command in the project directory
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--remote-branch<span class="w"> </span>main
+</code></pre></div></p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<div class="highlight"><pre><span></span><code>This will create and push the /sites directory to your main branch.
+If you are also working with Github desktop, don&#39;t commit and push otherwise you overwrite
+the gh-deploy command. When making changes to your local repository you need to reissue the deploy command.
+</code></pre></div>
+</div>
 
 
 
