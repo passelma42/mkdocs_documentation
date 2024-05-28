@@ -50,7 +50,7 @@ jobs:
 Go to your resository on github
 
 * Go to Settings > Pages > Build and deploymet > `Deploy from a branch`
-* Goto Settings > Pages > Branch  and  select `gh-pages`
+* Goto Settings > Pages > Branch  and  select >`gh-pages`
 
 
 
