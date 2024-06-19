@@ -70,11 +70,5 @@ Consider this project layout
 
 Issue following command in the project directory
 ```shell
-mkdocs gh-deploy --remote-branch main
+mkdocs gh-deploy
 ```
-
-!!! Danger
-		This will create and push the /sites directory to your main branch.
-		If you are also working with Github desktop, don't commit and push otherwise you overwrite
-		the gh-deploy command. When making changes to your local repository you need to reissue the deploy command.
-		

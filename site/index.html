@@ -472,12 +472,12 @@ docs/
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      - run: mkdocs gh-deploy --force
 </code></pre></div>
 <h3 id="add-to-github-pages">Add to GitHub pages</h3>
+<p>Go to your resository on github</p>
 <ul>
-<li>Go to settings</li>
-<li>Adjust accordingly
-<img alt="Alt Text" src="../images/github-pages.png" /></li>
+<li>Go to Settings &gt; Pages &gt; Build and deploymet &gt; <code>Deploy from a branch</code></li>
+<li>Goto Settings &gt; Pages &gt; Branch  and  select &gt;<code>gh-pages</code></li>
 </ul>
-<p>Now your ci.yml file should be deploid</p>
+<p>Now your ci.yml file should be deploid automatically.</p>
 <h2 id="publishdeploy-without-actions">Publish/deploy without Actions</h2>
 <p>In Github enterprize <strong>Actions</strong> is not allowed (at least @UGent). You need to deploy manually.
 Full documentation is found <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">here</a>.</p>
@@ -489,15 +489,8 @@ docs/
     ...       # Other markdown pages, images and other files.
 </code></pre></div>
 <p>Issue following command in the project directory
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--remote-branch<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs<span class="w"> </span>gh-deploy
 </code></pre></div></p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<div class="highlight"><pre><span></span><code>This will create and push the /sites directory to your main branch.
-If you are also working with Github desktop, don&#39;t commit and push otherwise you overwrite
-the gh-deploy command. When making changes to your local repository you need to reissue the deploy command.
-</code></pre></div>
-</div>
 
 
 
