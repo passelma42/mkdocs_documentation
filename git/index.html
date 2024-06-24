@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../git/">
+        <link rel="prev" href="..">
       
+      
+        <link rel="next" href="../page2/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Markdown examples - MkDocs-documentation</title>
+        <title>Git - MkDocs-documentation</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#markdown-examples" class="md-skip">
+        <a href="#step-1-generate-an-ssh-key-if-you-dont-already-have-one" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Markdown examples
+              Git
             
           </span>
         </div>
@@ -216,9 +218,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../git/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -233,11 +237,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../page2/" class="md-tabs__link">
         
   
     
@@ -308,26 +310,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Git
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -337,14 +319,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Markdown examples
+    Git
   </span>
   
 
@@ -355,7 +335,7 @@
         
   
   <span class="md-ellipsis">
-    Markdown examples
+    Git
   </span>
   
 
@@ -367,8 +347,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -377,45 +355,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#code-blocks" class="md-nav__link">
+  <a href="#step-1-generate-an-ssh-key-if-you-dont-already-have-one" class="md-nav__link">
     <span class="md-ellipsis">
-      code blocks
+      Step 1: Generate an SSH Key (if you don't already have one)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-blocks-with-title" class="md-nav__link">
+  <a href="#step-2-add-your-ssh-key-to-your-github-account" class="md-nav__link">
     <span class="md-ellipsis">
-      code blocks with title
+      Step 2: Add Your SSH Key to Your GitHub Account
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-blocks-with-linenumbers" class="md-nav__link">
+  <a href="#step-3-verify-ssh-connection-to-github" class="md-nav__link">
     <span class="md-ellipsis">
-      code blocks with linenumbers
+      Step 3: Verify SSH Connection to GitHub
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#emojis" class="md-nav__link">
+  <a href="#step-4-update-remote-url-to-use-ssh" class="md-nav__link">
     <span class="md-ellipsis">
-      emojis
+      Step 4: Update Remote URL to Use SSH
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-notes" class="md-nav__link">
+  <a href="#step-5-push-to-your-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      add Notes
+      Step 5: Push to Your Repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of Commands
     </span>
   </a>
   
@@ -425,6 +412,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown examples
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -444,56 +451,104 @@
                   
 
 
-<h1 id="markdown-examples">Markdown examples</h1>
-<h2 id="code-blocks">code blocks</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">python</label><label for="__tabbed_1_2">shell</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Hello world example (Python)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">zero_to_ten_double</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Hello world example (Python)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>print<span class="o">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="o">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">zero_to_ten_double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="m">2</span>*x<span class="w"> </span><span class="k">for</span><span class="w"> </span>x<span class="w"> </span><span class="k">in</span><span class="w"> </span>range<span class="o">(</span><span class="m">10</span><span class="o">)]</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="code-blocks-with-title">code blocks with title</h2>
-<div class="highlight"><span class="filename">hello-world.py</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Hello world example (Python)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">zero_to_ten_double</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-</code></pre></div>
-<h2 id="code-blocks-with-linenumbers">code blocks with linenumbers</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Hello world example (Python)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">zero_to_ten_double</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="emojis">emojis</h2>
-<p><img alt="🇧🇪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1e7-1f1ea.svg" title=":flag_be:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37a.svg" title=":beer:" /></p>
-<p><img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37a.svg" title=":beer:" /> <img alt="🍻" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37b.svg" title=":beers:" /> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37a.svg" title=":beer:" /> <img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <img alt="🤢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f922.svg" title=":nauseated_face:" /></p>
-<h2 id="add-notes">add Notes</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a note</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>This is a Danger</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is a warning</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>This is an Example</p>
-</div>
+  <h1>Git</h1>
+
+<h3 id="step-1-generate-an-ssh-key-if-you-dont-already-have-one">Step 1: Generate an SSH Key (if you don't already have one)</h3>
+<ol>
+<li><strong>Generate a New SSH Key:</strong></li>
+<li>Open your WSL terminal.</li>
+<li>Run the following command, replacing <code>your_email@example.com</code> with your GitHub email:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</code></pre></div></li>
+<li>When prompted to "Enter a file in which to save the key," press Enter to accept the default location.</li>
+<li>
+<p>You can choose to set a passphrase or leave it empty.</p>
+</li>
+<li>
+<p><strong>Add the SSH Key to the SSH Agent:</strong></p>
+</li>
+<li>Start the SSH agent in the background:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div></li>
+<li>Add your SSH private key to the SSH agent:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
+</code></pre></div></li>
+</ol>
+<h3 id="step-2-add-your-ssh-key-to-your-github-account">Step 2: Add Your SSH Key to Your GitHub Account</h3>
+<ol>
+<li><strong>Copy the SSH Key to Your Clipboard:</strong></li>
+<li>In your WSL terminal, run:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+</code></pre></div></li>
+<li>
+<p>Copy the output, which is your SSH public key.</p>
+</li>
+<li>
+<p><strong>Add the SSH Key to GitHub:</strong></p>
+</li>
+<li>Go to <a href="https://github.com">GitHub</a> and log in.</li>
+<li>In the upper-right corner, click your profile photo, then click <strong>Settings</strong>.</li>
+<li>In the left sidebar, click <strong>SSH and GPG keys</strong>.</li>
+<li>Click <strong>New SSH key</strong>.</li>
+<li>Provide a title for the key (e.g., "WSL SSH Key") and paste your SSH key into the "Key" field.</li>
+<li>Click <strong>Add SSH key</strong>.</li>
+</ol>
+<h3 id="step-3-verify-ssh-connection-to-github">Step 3: Verify SSH Connection to GitHub</h3>
+<ol>
+<li><strong>Test the SSH Connection:</strong></li>
+<li>Run the following command in your WSL terminal:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div></li>
+<li>You should see a message like:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Hi<span class="w"> </span>your_username!<span class="w"> </span>You<span class="err">&#39;</span>ve<span class="w"> </span>successfully<span class="w"> </span>authenticated,<span class="w"> </span>but<span class="w"> </span>GitHub<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>provide<span class="w"> </span>shell<span class="w"> </span>access.
+</code></pre></div></li>
+</ol>
+<h3 id="step-4-update-remote-url-to-use-ssh">Step 4: Update Remote URL to Use SSH</h3>
+<ol>
+<li><strong>Change the Remote URL in Your Repository:</strong></li>
+<li>Navigate to your repository in the WSL terminal.</li>
+<li>Change the remote URL to use SSH instead of HTTPS:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:your-username/your-repo.git
+</code></pre></div></li>
+</ol>
+<h3 id="step-5-push-to-your-repository">Step 5: Push to Your Repository</h3>
+<ol>
+<li><strong>Push Your Changes:</strong></li>
+<li>Now, try pushing your changes again:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></li>
+</ol>
+<h3 id="summary-of-commands">Summary of Commands</h3>
+<ol>
+<li>
+<p>Generate SSH key:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Start SSH agent and add key:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
+</code></pre></div></p>
+</li>
+<li>
+<p>Copy SSH key and add to GitHub:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+</code></pre></div></p>
+</li>
+<li>
+<p>Verify SSH connection:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div></p>
+</li>
+<li>
+<p>Update remote URL and push:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:your-username/your-repo.git
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></p>
+</li>
+</ol>
+<p>By following these steps, you should be able to resolve the <code>Permission denied (publickey)</code> error and successfully push your changes to GitHub.</p>
 
 
 
