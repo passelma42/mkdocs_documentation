@@ -20,7 +20,7 @@
     
     
       
-        <title>Git authentication - MkDocs-documentation</title>
+        <title>GIT - the works - MkDocs-documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-authentication" class="md-skip">
+        <a href="#git-the-works" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git authentication
+              GIT - the works
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
     
   
-  Git authentication
+  GIT - the works
 
       </a>
     </li>
@@ -326,7 +326,7 @@
           
   
   <span class="md-ellipsis">
-    Git authentication
+    GIT - the works
   </span>
   
 
@@ -337,7 +337,7 @@
         
   
   <span class="md-ellipsis">
-    Git authentication
+    GIT - the works
   </span>
   
 
@@ -359,54 +359,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-generate-an-ssh-key-if-you-dont-already-have-one" class="md-nav__link">
+  <a href="#step-1-initialize-a-local-git-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Generate an SSH Key (if you don't already have one)
+      Step 1: Initialize a Local Git Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-add-your-ssh-key-to-your-github-account" class="md-nav__link">
+  <a href="#step-2-add-files-and-make-an-initial-commit" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Add Your SSH Key to Your GitHub Account
+      Step 2: Add Files and Make an Initial Commit
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-verify-ssh-connection-to-github" class="md-nav__link">
+  <a href="#step-3-create-a-new-repository-on-github" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Verify SSH Connection to GitHub
+      Step 3: Create a New Repository on GitHub
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-update-remote-url-to-use-ssh" class="md-nav__link">
+  <a href="#step-4-link-local-repository-to-remote-github-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Update Remote URL to Use SSH
+      Step 4: Link Local Repository to Remote GitHub Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-push-to-your-repository" class="md-nav__link">
+  <a href="#step-5-set-up-ssh-access-to-github" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 5: Push to Your Repository
+      Step 5: Set Up SSH Access to GitHub
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary-of-commands" class="md-nav__link">
+  <a href="#step-6-configure-git-settings-for-the-folder" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of Commands
+      Step 6: Configure Git Settings for the Folder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-using-git-in-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Using Git in Your Project
     </span>
   </a>
   
@@ -455,103 +464,204 @@
                   
 
 
-<h1 id="git-authentication">Git authentication</h1>
-<h3 id="step-1-generate-an-ssh-key-if-you-dont-already-have-one">Step 1: Generate an SSH Key (if you don't already have one)</h3>
+<h1 id="git-the-works">GIT - the works</h1>
+<h2 id="step-1-initialize-a-local-git-repository"><strong>Step 1: Initialize a Local Git Repository</strong></h2>
 <ol>
-<li><strong>Generate a New SSH Key:</strong></li>
-<li>Open your WSL terminal.</li>
-<li>Run the following command, replacing <code>your_email@example.com</code> with your GitHub email:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
-</code></pre></div></li>
-<li>When prompted to "Enter a file in which to save the key," press Enter to accept the default location.</li>
+<li><strong>Open Terminal/Command Prompt</strong>:</li>
+<li>Use Git Bash, Command Prompt, or PowerShell on Windows.</li>
 <li>
-<p>You can choose to set a passphrase or leave it empty.</p>
+<p>Use Terminal on macOS or Linux.</p>
 </li>
 <li>
-<p><strong>Add the SSH Key to the SSH Agent:</strong></p>
-</li>
-<li>Start the SSH agent in the background:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div></li>
-<li>Add your SSH private key to the SSH agent:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
-</code></pre></div></li>
-</ol>
-<h3 id="step-2-add-your-ssh-key-to-your-github-account">Step 2: Add Your SSH Key to Your GitHub Account</h3>
-<ol>
-<li><strong>Copy the SSH Key to Your Clipboard:</strong></li>
-<li>In your WSL terminal, run:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
-</code></pre></div></li>
-<li>
-<p>Copy the output, which is your SSH public key.</p>
+<p><strong>Navigate to the Folder</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/your/local/folder
+</code></pre></div>
+   Replace <code>/path/to/your/local/folder</code> with the path to your folder.</p>
 </li>
 <li>
-<p><strong>Add the SSH Key to GitHub:</strong></p>
+<p><strong>Initialize the Git Repository</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>init
+</code></pre></div>
+   This command initializes a new Git repository in your local folder.</p>
 </li>
-<li>Go to <a href="https://github.com">GitHub</a> and log in.</li>
-<li>In the upper-right corner, click your profile photo, then click <strong>Settings</strong>.</li>
-<li>In the left sidebar, click <strong>SSH and GPG keys</strong>.</li>
-<li>Click <strong>New SSH key</strong>.</li>
-<li>Provide a title for the key (e.g., "WSL SSH Key") and paste your SSH key into the "Key" field.</li>
-<li>Click <strong>Add SSH key</strong>.</li>
 </ol>
-<h3 id="step-3-verify-ssh-connection-to-github">Step 3: Verify SSH Connection to GitHub</h3>
-<ol>
-<li><strong>Test the SSH Connection:</strong></li>
-<li>Run the following command in your WSL terminal:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
-</code></pre></div></li>
-<li>You should see a message like:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Hi<span class="w"> </span>your_username!<span class="w"> </span>You<span class="err">&#39;</span>ve<span class="w"> </span>successfully<span class="w"> </span>authenticated,<span class="w"> </span>but<span class="w"> </span>GitHub<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>provide<span class="w"> </span>shell<span class="w"> </span>access.
-</code></pre></div></li>
-</ol>
-<h3 id="step-4-update-remote-url-to-use-ssh">Step 4: Update Remote URL to Use SSH</h3>
-<ol>
-<li><strong>Change the Remote URL in Your Repository:</strong></li>
-<li>Navigate to your repository in the WSL terminal.</li>
-<li>Change the remote URL to use SSH instead of HTTPS:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:your-username/your-repo.git
-</code></pre></div></li>
-</ol>
-<h3 id="step-5-push-to-your-repository">Step 5: Push to Your Repository</h3>
-<ol>
-<li><strong>Push Your Changes:</strong></li>
-<li>Now, try pushing your changes again:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div></li>
-</ol>
-<h3 id="summary-of-commands">Summary of Commands</h3>
+<h2 id="step-2-add-files-and-make-an-initial-commit"><strong>Step 2: Add Files and Make an Initial Commit</strong></h2>
 <ol>
 <li>
-<p>Generate SSH key:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+<p><strong>Add Files to the Repository</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</code></pre></div>
+   This adds all files in the current directory to the staging area.</p>
+</li>
+<li>
+<p><strong>Make an Initial Commit</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
+</code></pre></div>
+   This commits the staged files to the repository with the message "Initial commit."</p>
+</li>
+</ol>
+<h2 id="step-3-create-a-new-repository-on-github"><strong>Step 3: Create a New Repository on GitHub</strong></h2>
+<ol>
+<li>
+<p><strong>Log in to GitHub</strong>:<br />
+   Go to <a href="https://github.com">GitHub</a> and log in to your account.</p>
+</li>
+<li>
+<p><strong>Create a New Repository</strong>:</p>
+</li>
+<li>Click the "+" icon at the top-right corner and select "New repository."</li>
+<li>Fill in the repository name and description.</li>
+<li>Choose whether the repository should be <strong>Public</strong> or <strong>Private</strong>.</li>
+<li>
+<p>Do <strong>not</strong> initialize the repository with a README, <code>.gitignore</code>, or license.</p>
+</li>
+<li>
+<p><strong>Create the Repository</strong>:</p>
+</li>
+<li>Click "Create repository."</li>
+</ol>
+<h2 id="step-4-link-local-repository-to-remote-github-repository"><strong>Step 4: Link Local Repository to Remote GitHub Repository</strong></h2>
+<ol>
+<li><strong>Copy the Remote Repository URL</strong>:</li>
+<li>
+<p>On the new repository page, copy the SSH URL (e.g., <code>git@github.com:username/repository.git</code>).</p>
+</li>
+<li>
+<p><strong>Add the Remote Repository</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:username/repository.git
+</code></pre></div>
+   Replace <code>git@github.com:username/repository.git</code> with your copied URL.</p>
+</li>
+<li>
+<p><strong>Push the Local Repository to GitHub</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+   This pushes your local commits to GitHub. The <code>-u</code> flag sets the upstream tracking for the <code>master</code> branch.</p>
+</li>
+</ol>
+<h2 id="step-5-set-up-ssh-access-to-github"><strong>Step 5: Set Up SSH Access to GitHub</strong></h2>
+<ol>
+<li>
+<p><strong>Check for Existing SSH Keys</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls<span class="w"> </span>-al<span class="w"> </span>~/.ssh
+</code></pre></div>
+   Check if you already have SSH key pairs like <code>id_rsa</code> and <code>id_rsa.pub</code>.</p>
+</li>
+<li>
+<p><strong>Generate a New SSH Key (if needed)</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</code></pre></div>
+   Replace <code>"your_email@example.com"</code> with your GitHub email. Accept the default file location and set a passphrase if desired.</p>
+</li>
+<li>
+<p><strong>Add SSH Key to the SSH Agent</strong>:
+   Start the SSH agent:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+   Add your SSH private key:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
 </code></pre></div></p>
 </li>
 <li>
-<p>Start SSH agent and add key:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ssh-add<span class="w"> </span>~/.ssh/id_rsa
+<p><strong>Add SSH Key to GitHub</strong>:</p>
+</li>
+<li>Copy the SSH key to your clipboard:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+</code></pre></div>
+     Copy the output.</li>
+<li>Go to GitHub -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key.</li>
+<li>
+<p>Paste the key, give it a title, and click "Add SSH key."</p>
+</li>
+<li>
+<p><strong>Modify the <code>.ssh/config</code> File</strong>:</p>
+</li>
+<li>Open or create the <code>.ssh/config</code> file:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nano<span class="w"> </span>~/.ssh/config
+</code></pre></div></li>
+<li>
+<p>Add the following configuration:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a># Configuration for HOST1 access
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Host HOST1
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    HostName 000.000.11.30
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    User User1
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    IdentityFile ~/.ssh/id_rsa_HOST1
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a># Configuration for HOST2 access
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>Host HOST2
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    HostName 000.000.11.11
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    User User2
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    Port 22
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    IdentityFile ~/.ssh/id_rsa_HOST2
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a># Configuration for GitHub access (git-HOST3 account)
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>Host git-HOST3
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    HostName github.com
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    User git
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    IdentityFile ~/.ssh/id_rsa_git-HOST3
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>    AddKeysToAgent yes
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a># Configuration for GitHub access (git-HOST4 enterprise account)
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>Host git-enterprise
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>    HostName github.com
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>    User git
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>    IdentityFile ~/.ssh/id_wsl_git-HOST4
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>    AddKeysToAgent yes
 </code></pre></div></p>
 </li>
 <li>
-<p>Copy SSH key and add to GitHub:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+<p><strong>Test SSH Connection</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@git-HOST3
+</code></pre></div>
+   This command tests if you can authenticate with GitHub using the configured key. You should see a message like <code>Hi username! You've successfully authenticated...</code>.</p>
+</li>
+</ol>
+<h2 id="step-6-configure-git-settings-for-the-folder"><strong>Step 6: Configure Git Settings for the Folder</strong></h2>
+<ol>
+<li>
+<p><strong>Set Your Username and Email</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>config<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>config<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</code></pre></div>
+   Replace <code>"Your Name"</code> and <code>"your_email@example.com"</code> with your actual name and email.</p>
+</li>
+<li>
+<p><strong>Set Default Push Behavior</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>config<span class="w"> </span>push.default<span class="w"> </span>simple
+</code></pre></div>
+   This ensures that <code>git push</code> pushes only the current branch.</p>
+</li>
+<li>
+<p><strong>Verify Your Configuration</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>git<span class="w"> </span>config<span class="w"> </span>--list
+</code></pre></div>
+   This command lists all your Git configurations to verify they are set correctly.</p>
+</li>
+</ol>
+<h2 id="step-7-using-git-in-your-project"><strong>Step 7: Using Git in Your Project</strong></h2>
+<ol>
+<li>
+<p><strong>Check Status</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>status
 </code></pre></div></p>
 </li>
 <li>
-<p>Verify SSH connection:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+<p><strong>Stage Changes</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
 </code></pre></div></p>
 </li>
 <li>
-<p>Update remote URL and push:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:your-username/your-repo.git
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+<p><strong>Commit Changes</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Your commit message&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Push Changes</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git<span class="w"> </span>push
 </code></pre></div></p>
 </li>
 </ol>
-<p>By following these steps, you should be able to resolve the <code>Permission denied (publickey)</code> error and successfully push your changes to GitHub.</p>
+<p>This complete guide will help you set up a local Git repository, connect it to a GitHub repository using SSH, and configure your SSH and Git settings properly.</p>
 
 
 
